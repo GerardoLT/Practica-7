@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ControladorGitHub;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,7 +13,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::view('1','Formulario')->name('form');
+Route::view('2','Tabla');
 Route::get('/', function () {
     return view('welcome');
 });
+Route::post('Guardar',[ControladorGitHub::class,'Envio_de_datos']);
